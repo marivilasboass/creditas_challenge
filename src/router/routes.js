@@ -2,8 +2,8 @@ import {createAppContainer, createSwitchNavigator} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 
 import Login from '~/pages/Login';
-import RepoList from '~/pages/RepoList';
-import RepoDetail from '~/pages/RepoDetails';
+import RepositoryList from '~/pages/RepositoryList';
+import RepositoryDetails from '~/pages/RepositoryDetails';
 
 import {ROUTES} from './index';
 
@@ -13,7 +13,7 @@ const AuthStack = createStackNavigator(
 );
 
 const MainStack = createStackNavigator(
-  {[ROUTES.REPO_LIST]: RepoList, [ROUTES.REPO_DETAIL]: RepoDetail},
+  {[ROUTES.REPOSITORY_LIST]: RepositoryList, [ROUTES.REPOSITORY_DETAIL]: RepositoryDetails},
   {headerMode: 'none'},
 );
 

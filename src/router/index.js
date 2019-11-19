@@ -1,6 +1,6 @@
 export const ROUTES = {
-  REPO_LIST: 'RepoList',
-  REPO_DETAIL: 'RepoDetail',
+  REPOSITORY_LIST: 'RepositoryList',
+  REPOSITORY_DETAIL: 'RepositoryDetails',
   AUTH: 'Auth',
   LOGIN: 'Login',
   MAIN: 'Main',

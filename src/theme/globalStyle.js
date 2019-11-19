@@ -4,7 +4,6 @@ export const theme = {
     gray: '#CCC',
     white: '#FFFFFF',
     black: '#333',
-    facebook: '#4168AD',
   },
   fontSize: {
     small: '10px',
@@ -17,4 +16,5 @@ export const theme = {
     large: '20px',
     default: '40px',
   },
+  radius: '6px',
 };
