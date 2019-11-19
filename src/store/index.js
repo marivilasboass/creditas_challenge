@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import {persistStore, persistReducer} from 'redux-persist';
 import AsyncStorage from '@react-native-community/async-storage';
 
-import rootReducer from './Ducks';
+import rootReducer from './ducks';
 import tron from '~/config/ReactotronConfig';
 
 const middlewares = [];

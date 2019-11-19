@@ -1,7 +1,32 @@
-import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import {createAppContainer, createSwitchNavigator} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
 
-import Main from '~/pages/Main';
+import Login from '~/pages/Login';
+import RepoList from '~/pages/RepoList';
+import RepoDetail from '~/pages/RepoDetails';
 
-const Routes = createAppContainer(createSwitchNavigator({ Main }));
+import {ROUTES} from './index';
 
-export default Routes;
+const AuthStack = createStackNavigator(
+  {[ROUTES.LOGIN]: Login},
+  {mode: 'modal', headerMode: 'none'},
+);
+
+const MainStack = createStackNavigator(
+  {[ROUTES.REPO_LIST]: RepoList, [ROUTES.REPO_DETAIL]: RepoDetail},
+  {headerMode: 'none'},
+);
+
+export default createAppContainer(
+  createSwitchNavigator(
+    {
+      [ROUTES.AUTH]: AuthStack,
+      [ROUTES.MAIN]: MainStack,
+    },
+    {
+      initialRouteName: ROUTES.AUTH,
+      mode: 'modal',
+      headerMode: 'none',
+    },
+  ),
+);
