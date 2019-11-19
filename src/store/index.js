@@ -4,7 +4,7 @@ import {persistStore, persistReducer} from 'redux-persist';
 import AsyncStorage from '@react-native-community/async-storage';
 
 import rootReducer from './Ducks';
-import ReactotronConfig from '~/config/ReactotronConfig';
+import tron from '~/config/ReactotronConfig';
 
 const middlewares = [];
 const enhancers = [];
@@ -24,7 +24,7 @@ const store = createAppropriateStore(
   persistedReducer,
   compose(
     ...enhancers,
-    ReactotronConfig.createEnhancer(),
+    tron.createEnhancer(),
   ),
 );
 

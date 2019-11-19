@@ -1,11 +1,18 @@
-import Reactotron from 'reactotron-react-native';
+import {NativeModules} from 'react-native';
+import Reactotron, {openInEditor} from 'reactotron-react-native';
+import {reactotronRedux} from 'reactotron-redux';
+import url from 'url';
 
-if (__DEV__) {
-  const tron = Reactotron.configure()
-    .useReactNative()
-    .connect();
+const {hostname} = url.parse(NativeModules.SourceCode.scriptURL);
 
-  tron.clear();
+const tron = Reactotron.configure({host: hostname})
+  .useReactNative()
+  .use(reactotronRedux())
+  .use(openInEditor())
+  .connect();
 
-  console.tron = tron;
-}
+tron.clear();
+
+console.tron = Reactotron;
+
+export default tron;

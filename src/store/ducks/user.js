@@ -1,7 +1,7 @@
 import {encode} from 'base-64';
 
 import api from '~/services/api';
-import {isEmailValid} from '../../Utils/email';
+import {isEmailValid} from '~/utils/email';
 
 export const Types = {
   LOGIN_ADD_EMAIL_REQUEST: 'Login/Add/Email/Request',
@@ -13,7 +13,7 @@ export const Types = {
   LOGIN_RESET: 'Login/Reset',
 };
 
-import {ROUTES} from '~/routes';
+import {ROUTES} from '~/router';
 
 export const userAddEmail = ({dispatch}) => ({email}) => {
   if (!email) {
