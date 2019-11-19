@@ -3,7 +3,7 @@ import {RectButton} from 'react-native-gesture-handler';
 import {theme} from '~/theme/globalStyle';
 
 export const WrapperButton = styled(RectButton)`
-  width: 50px;
+  width: 60px;
   margin-top: ${theme.defaultPadding.large};
   margin-bottom: ${theme.defaultPadding.large};
   align-self: center;

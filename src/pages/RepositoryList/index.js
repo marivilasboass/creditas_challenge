@@ -9,7 +9,7 @@ import {getRepos} from '~/store/ducks/repository';
 
 import RepoListScrollView from './components/ListItemScroll';
 import SearchInput from '~/components/SearchInput';
-import {Wrapper, Logo, AnimatedWrapper} from './style';
+import {Wrapper, Logo} from './style';
 
 export class RepositoryList extends PureComponent {
   static propTypes = {
@@ -62,14 +62,14 @@ export class RepositoryList extends PureComponent {
     return (
       <Wrapper>
         <StatusBar barStyle="default" />
-        <AnimatedWrapper>
+        <Animated.View>
           <Logo source={require('~/assets/images/logo-full.png')} />
           <SearchInput
             defaultValue={keyword}
             onChange={value => this.onChange(value)}
             placeholder="search"
           />
-        </AnimatedWrapper>
+        </Animated.View>
 
         <RepoListScrollView
           isLoading={isLoading}

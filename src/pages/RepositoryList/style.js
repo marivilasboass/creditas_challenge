@@ -19,7 +19,3 @@ export const Logo = styled.Image`
   resize-mode: contain;
   align-self: center;
 `;
-
-export const AnimatedWrapper = styled.Animated.View`
-  height: 150px;
-`;
